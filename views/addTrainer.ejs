@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <main>
+        <section class="form">
+            <a href="http://localhost:3000" class="btn btn-home"><i class="fas fa-home"></i></a>
+            <div class="container container-trainer">
+                <section class="form__section">
+                    <form action="" id="trainerForm" method="post">
+
+                        <h3 class="form__heading heading-secondary">
+                            <%= title%>
+                        </h3>
+                        <input type="text" name="firstName" class="input" placeholder="First Name" id="firstname"
+                            pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15" required
+                            title="Please fill out the field with 3-15 characters and no numbers">
+                        <label for="firstname"></label>
+                        <input type="text" name="lastName" class="input" placeholder="Last Name" id="lastname"
+                            pattern="[A-Za-z]{1,15}" minlength="3" maxlength="15"
+                            title="Please fill out the field with 3-15 characters and no numbers" required>
+                        <label for="lastname"></label>
+                        <select name="subject" id="subject" class="input" required="true"
+                            title="Please choose a Subject">
+                            <option value="#">---Subject---</option>
+                            <optgroup label="Front-End"></optgroup>
+                            <option name="Front-HTML-CSS-JS" value="Front-HTML-CSS-JS">HTNL/CSS/JavaScript</option>
+                            <option name="Front-ReactJs" value="Front-ReactJs">React JS</option>
+                            </optgroup>
+                            <optgroup label="Back-End"></optgroup>
+                            <option name="Back-NodeJs" value="Back-NodeJs">Node JS</option>
+                            <option name="Back-Java" value="Back-Java">Java</option>
+                            </optgroup>
+                        </select>
+                        <p class="heading-secondary error">
+                            <%= message %>
+                        </p>
+                        <button class="btn btn-form btn-trainer">Submit</button>
+                    </form>
+
+                </section>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

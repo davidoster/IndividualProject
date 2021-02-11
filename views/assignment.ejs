@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body class="trainers-view">
+    <a href="http://localhost:3000" class="btn btn-home"><i class="fas fa-home"></i></a>
+    <h1>
+        <%= title %>
+    </h1>
+    <div id="error" class="message">
+        <%= message %>
+    </div>
+    <!-- <div>
+        Add new Course
+        <a href="<%= url + '/add/' %>" class="btn "><i class="fas fa-plus add"></i></a>
+    </div> -->
+    <div class="entry-list">
+        <% for(var i=0; i < assignments.length; i++) { %>
+            <a href="#">
+                <div class="entry">
+                    <i class="fas fa-file-code feature-box__icon"></i>
+                    <%= assignments[i].id %>
+
+                        <ul>
+                            <li>
+                                <%= assignments[i].title %> -
+                                    <%= assignments[i].description %>
+                            </li>
+
+                            <li>Sub Date: <%= assignments[i].submission_date.toLocaleDateString() %>
+                            </li>
+                            <li>
+                                Total Mark: <%=assignments[i].total_mark %>
+                            </li>
+                        </ul>
+                </div>
+            </a>
+            <% } %>
+    </div>
+</body>
+
+</html>

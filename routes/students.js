@@ -22,7 +22,7 @@ router.get('/add/', (req, res, next) => {
 
 router.post('/add', (req, res, next) => {
     let student = new Student(undefined, req.body.firstName, req.body.lastName, req.body.dateOfBirth, req.body.tuition);
-    const query = `INSERT INTO privateschool.students (first_name, last_name, date_of_birth, tuition_fees) VALUES (?, ?, ?, ?);`
+    const query = `INSERT INTO private_school.students (first_name, last_name, date_of_birth, tuition_fees) VALUES (?, ?, ?, ?);`
     dbconnection.execute(query, [student.firstName, student.lastName, student.dateOfBirth, student.tuitionFees], (err, result) => {
         if (err) {
             res.render('addStudent', { title: '', message: 'ERROR inserting Data into DB' });

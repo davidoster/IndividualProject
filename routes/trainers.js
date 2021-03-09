@@ -22,10 +22,10 @@ router.get('/add/', (req, res, next) => {
 
 router.post('/add', (req, res, next) => {
     let trainer = new Trainer(undefined, req.body.firstName, req.body.lastName, req.body.subject);
-    const query = `INSERT INTO privateschool.trainers (first_name, last_name, subject) VALUES (?, ?, ?);`
+    const query = `INSERT INTO private_school.trainers (first_name, last_name, subject) VALUES (?, ?, ?);`
     dbconnection.execute(query, [trainer.firstName, trainer.lastName, trainer.subject], (err, result) => {
         if (err) {
-            res.render('addTrainer', { title: '', messag: 'ERROR inserting Data into DB' });
+            res.render('addTrainer', { title: '', message: 'ERROR inserting Data into DB' });
         } else {
             res.redirect('/trainers?message=New Trainer Added!!');
         }
